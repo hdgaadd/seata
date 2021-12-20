@@ -30,7 +30,10 @@ public class AccountController {
 
     @ApiOperation("传递userId、amount扣减钱包")
     @PostMapping("/decrease")
-    public void decrease(@RequestParam Long userId, @RequestParam BigDecimal amount) {
+    public void decrease(@RequestParam Long userId, @RequestParam BigDecimal amount) throws Exception {
+        if (userId == 1) {
+            throw new Exception("异常");
+        }
         accountService.decrease(userId, amount);
     }
 }

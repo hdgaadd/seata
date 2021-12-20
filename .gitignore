@@ -1,7 +1,0 @@
-# Project exclude paths
-/account/target/
-/common/target/
-/order/target/
-/repository/target/
-/system/target/
-/template/target/

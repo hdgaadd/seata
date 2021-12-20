@@ -9,7 +9,9 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/cutedoudou/pom.xml" />
+        <option value="$PROJECT_DIR$/template/pom.xml" />
         <option value="$PROJECT_DIR$/test/pom.xml" />
+        <option value="$PROJECT_DIR$/util/pom.xml" />
       </set>
     </option>
   </component>

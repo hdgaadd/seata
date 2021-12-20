@@ -3,6 +3,7 @@ package com.codeman.controller;
 import com.codeman.domain.OrderMain;
 import com.codeman.service.AccountService;
 import com.codeman.service.OrderService;
+import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ public class ShoppingController {
 
     @ApiOperation("seate操作")
     @PostMapping("/shopping")
+    @GlobalTransactional
     public void shopping(OrderMain orderMain) {
         orderService.createOrder(orderMain);
         accountService.decrease(orderMain.getUserId(), orderMain.getAmount());
