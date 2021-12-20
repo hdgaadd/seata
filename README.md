@@ -8,20 +8,13 @@
 
 
 
-**使用到分布式事务的场景类型**
-
-- 单体项目使用多个数据源，就使用到分布式事务
-- 微服务，显而易见必须使用分布式事务
-
-
-
 **Coding**
 
 - 服务1：传递order，生成订单编号，在数据库创建订单
 
 - 服务2：传递userId、amount，扣减钱包
 
-  若服务3调用服务1和服务2，某个服务执行方法失败，则**回滚事务**
+- 若服务3调用服务1和服务2，某个服务执行方法失败，则**回滚事务**
 
 - 在file.conf配置Seata的**服务分组**
 
@@ -44,4 +37,4 @@
 
 - 导入Seata的pom依赖
 - 调用**调用多个服务**的主方法添加@GolbalTransactional
-- 3个module在application.yml**配置Seata**的配置信息，与配置在file.conf配置的Seata的**服务分组**
+- 3个module在application.yml**配置Seata**的配置信息，并配置以上在file.conf配置的Seata**服务分组**
